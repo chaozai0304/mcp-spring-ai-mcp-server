@@ -1,0 +1,24 @@
+server:
+  port: 8090
+logging:
+  level:
+    io:
+      modelcontextprotocol:
+        client: DEBUG
+        spec: DEBUG
+
+spring:
+  main:
+    banner-mode: off
+  application:
+    name: mcp-server
+  ai:
+    mcp:
+      server:
+#https://docs.spring.io/spring-ai/reference/api/mcp/mcp-server-boot-starter-docs.html#_webflux_server_transport
+        name: mcp-server
+        version: 1.0.0
+        type: ASYNC
+        enabled: true
+        sse-endpoint: /sse
+        sse-message-endpoint: /mcp/message
